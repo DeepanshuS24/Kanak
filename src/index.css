@@ -1,0 +1,85 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 44 33% 95%;
+    --foreground: 20 14.3% 4.1%;
+    
+    --rum-swizzle: 48 50% 95%;
+    --disco: 347 82% 41%;
+    --careys-pink: 2 29% 74%;
+    --turkish-rose: 343 27% 60%;
+
+    --radius: 0.5rem;
+  }
+
+  body {
+    @apply bg-careys-pink text-foreground antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'DM Serif Display', serif;
+  }
+
+  .font-garamond {
+    font-family: 'EB Garamond', serif;
+  }
+
+  .font-garamond-bold {
+    font-family: 'EB Garamond', serif;
+    font-weight: 700;
+  }
+}
+
+/* Custom Animation Classes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+.navbar-fixed {
+  @apply fixed top-0 left-0 right-0 bg-[#F8F6EB]/90 backdrop-blur-md shadow-sm;
+  transition: all 0.3s ease-in-out;
+}
+
+.brand-transition {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Add perspective utilities */
+.perspective-[1000px] {
+  perspective: 1000px;
+}
+
+/* Custom container max-width for larger screens */
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1270px;
+  }
+}
+
+/* Custom bottom spacing for large screens */
+@media (min-width: 1024px) {
+  .lg\:bottom-16 {
+    bottom: 1rem;
+  }
+}
